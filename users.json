@@ -1,0 +1,26 @@
+{
+    "rajendra321": {
+        "first_name": "Rajendra ",
+        "last_name": "Bagdai",
+        "email": "rajbagdai30@gmail.com",
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "mobile": "9409331002",
+        "gender": "Male"
+    },
+    "rajendra123": {
+        "first_name": "Rajendra",
+        "last_name": "Bagdai",
+        "email": "rajbagdai30@gmail.com",
+        "password": "123456",
+        "mobile": "9409331002",
+        "gender": "Male"
+    },
+    "rajendra0821": {
+        "first_name": "Rajendra",
+        "last_name": "Bagdai",
+        "email": "rajbagdai30@gmail.com",
+        "password": "31c07b676f9a013873aac480179cd3634bf8c4a4f49510209333a030c94e8631",
+        "mobile": "9409331002",
+        "gender": "Male"
+    }
+}

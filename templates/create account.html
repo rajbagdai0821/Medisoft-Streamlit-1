@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create account</title>
+    <link rel="stylesheet" href="create account.css">
+</head>
+
+<body>
+    <div class="main">
+        <h2>Create account</h2>
+        <form action="">
+            <label for="first">First Name:</label>
+            <input type="text" id="first" name="first" required />
+
+            <label for="last">Last Name:</label>
+            <input type="text" id="last" name="last" required />
+
+            <label for="first">UserID:</label>
+            <input type="text" id="user" name="user" required />
+
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+
+            <label for="repassword">Re-type Password:</label>
+            <input type="password" id="repassword" name="repassword" required />
+
+            <label for="mobile">Contact:</label>
+            <input type="text" id="mobile" name="mobile" maxlength="10" required />
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">
+                    Male
+                </option>
+                <option value="female">
+                    Female
+                </option>
+            </select>
+
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

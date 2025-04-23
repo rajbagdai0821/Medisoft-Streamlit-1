@@ -1,0 +1,281 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medisoft</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <span><img width="53" src="https://infohubconsultancy.com/wp-content/uploads/2022/02/Medisoft-Medical-Billing-Software.png" alt=""></span>
+        </nav>
+        <div class="box"></div>
+        <div class="hero">
+            <span>Medisoft</span>
+            <span>AI Skin Disease Detector</span>
+            <span>Upload your skin image and find its cure with prescription</span>
+            <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileUpload" name="file" accept="image/*">
+                <button type="submit" id="uploadBtn" class="btn">Upload Image</button>
+            </form>
+            <br>
+        </div>
+        <div class="separation"></div>
+    </div>
+    <br><br>
+
+    <section class="centre">
+        <div>
+            <h2>These are some rare diseases</h2>
+        </div>
+    </section>
+    <br><br>
+
+    <section class="first">
+        <div>
+            <span>Actinic prurigo (AP)</span>
+            <span>Itchy rash in response to sun exposure.</span>
+        </div>
+        <div class="secImg">
+            <img src="https://ijdvl.com/content/126/2013/79/6/Images/ijdvl_2013_79_6_783_120726_f3.jpg" alt="">
+        </div>
+    </section>
+    <div class="separation"></div>
+
+    <section class="first second">
+        <div class="secImg">
+            <img src="https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/05/Blau_syndrome_header-1024x575.jpg?w=1155&h=1528" alt="">
+        </div>
+        <div>
+            <span>Blau syndrome</span>
+            <span>Blau syndrome is a rare genetic disorder that affects the skin, eyes, and joints</span>
+        </div>
+    </section>
+
+    <div class="separation"></div>
+    <section class="first third">
+        <div>
+            <span>Raynaud's Syndrome</span>
+            <span>Periodic reduced blood flow to your fingers, toes or other body parts, causing numbness or skin color change.</span>
+        </div>
+        <div class="secImg">
+            <img src="https://b2976109.smushcdn.com/2976109/wp-content/uploads/2019/04/white_fingers_with_raynauds_750-2.jpg?lossy=2&strip=1&webp=1" alt="">
+        </div>
+    </section>
+    <div class="separation"></div>
+
+    <section class="first second">
+        <div class="secImg">
+            <img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-662-58713-3_60-1/MediaObjects/479707_0_En_60-1_Fig16_HTML.jpg" alt="">
+        </div>
+        <div>
+            <span>Harlequin ichthyosis</span>
+            <span>The skin forms large diamond-shaped plates that crack and split.</span>
+        </div>
+    </section>
+
+    <div class="separation"></div>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faqbox">
+            <div class="popup" onclick="myFunction(this)">
+                <span>What is Medisoft?</span>
+                <div class="popuptext">
+                    <p>
+                        Medisoft is an innovative website designed to provide users with comprehensive and accurate information about various diseases, medical conditions, and health-related topics.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faqbox">
+            <div class="popup" onclick="myFunction(this)">
+                <span>What does Medisoft do?</span>
+                <div class="popuptext">
+                    <p>
+                        The primary goal of Medisoft is to empower individuals by offering accessible, reliable, and up-to-date health information at their fingertips. Medisoft aims to bridge the gap between medical knowledge and everyday health management.
+                    </p>
+                </div>            
+            </div>
+        </div>
+
+        <div class="faqbox">
+            <div class="popup" onclick="myFunction(this)">
+                <span>Will I find my disease?</span>
+                <div class="popuptext">
+                    <p>
+                        Yes, you will find your disease. With advanced medical diagnostics and AI-powered tools, identifying health conditions is easier than ever. Get accurate results and insights to understand your condition better.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faqbox">
+            <div class="popup" onclick="myFunction(this)">
+                <span>Is doctor consultancy available?</span>
+                <div class="popuptext">
+                    <p>
+                        Yes, doctor consultancy is available. You can connect with medical professionals for expert advice, diagnosis, and treatment recommendations, ensuring proper healthcare guidance whenever needed.
+                    </p>
+                </div>            
+            </div>
+        </div>
+    </section>
+    
+    <div class="separation"></div>
+
+    <footer>
+        <div class="questions">
+            Questions? Call 000-111-222-333
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>            
+            <li><a href="{{ url_for('contact') }}">Contact US</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('create_account') }}">Create account</a></li>
+        </ul>
+    </footer>
+    
+    <script>
+        function myFunction(element) {
+            var popup = element.querySelector(".popuptext");
+    
+            // Close any other open popups
+            document.querySelectorAll(".popuptext").forEach(p => {
+                if (p !== popup) {
+                    p.classList.remove("show");
+                }
+            });
+    
+            // Toggle current popup
+            popup.classList.toggle("show");
+    
+            // Adjust position dynamically if content is long
+            if (popup.classList.contains("show")) {
+                let popupHeight = popup.offsetHeight;
+                let spaceAbove = element.getBoundingClientRect().top;
+                if (spaceAbove < popupHeight + 20) {
+                    popup.style.bottom = "auto";
+                    popup.style.top = "110%"; /* Moves below if not enough space above */
+                } else {
+                    popup.style.bottom = "130%";
+                    popup.style.top = "auto";
+                }
+            }
+        }
+    
+     
+    </script>
+    
+</body>
+</html>
+
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="main">
+        <h1>Medisoft</h1>
+        <h3>Enter your login credentials</h3>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="first">UserID:</label>
+            <input type="text" id="first" name="first" placeholder="Enter your UserID" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+            <div class="wrap">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <p>Not registered?
+            <a href="{{ url_for('create_account') }}" style="text-decoration: none;">
+                <button1>Create account</button1>
+            </a>
+        </p>
+    </div>
+</body>
+</html>
+
+<!-- templates/contact.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact US</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+<body>
+    <div class="main">
+        <h1>Medisoft</h1>
+        <h3>Enter your details</h3>
+        <form action="{{ url_for('contact') }}" method="post">
+            <label for="first">Full Name:</label>
+            <input type="text" id="first" name="first" placeholder="Enter your Full Name" required>
+
+            <label for="number">Mobile NO:</label>
+            <input type="number" id="number" name="number" placeholder="Enter your Mobile NO" required>
+
+            <div class="wrap">
+                <button type="submit">Submit</button>
+            </div>
+            <p>
+                For any query: 22ce111.tarang.bhatt@vvpedulink.ac.in
+            </p>
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- templates/create_account.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create_account.css') }}">
+</head>
+<body>
+    <div class="main">
+        <h2>Create account</h2>
+        <form action="{{ url_for('create_account') }}" method="post">
+            <label for="first">First Name:</label>
+            <input type="text" id="first" name="first" required />
+
+            <label for="last">Last Name:</label>
+            <input type="text" id="last" name="last" required />
+
+            <label for="user">UserID:</label>
+            <input type="text" id="user" name="user" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+
+            <label for="repassword">Re-type Password:</label>
+            <input type="password" id="repassword" name="repassword" required />
+
+            <label for="mobile">Contact:</label>
+            <input type="text" id="mobile" name="mobile" maxlength="10" required />
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
